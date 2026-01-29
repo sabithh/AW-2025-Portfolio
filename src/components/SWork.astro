@@ -8,50 +8,41 @@ const videos = await Astro.glob<{ default: any }>('/src/assets/works/*.mp4')
 // But it’s my site, and editing it in code is faster than setting up yet another headless something.
 // Sometimes "quick and dirty" wins. Don’t @ me.
 const info = {
-  Pen: {
-    title: 'CodePen',
-    site: 'https://codepen.io/wodniack',
+  BakeryPOS: {
+    title: 'Bakery POS & Owner Management System',
+    description:
+      'A complete Point of Sale and owner management system for bakery operations, including sales tracking, staff management, inventory handling, and daily performance reports.',
+    technologies: 'Python, Django, Backend Systems',
+    site: 'https://github.com/sabithh',
   },
-  Dummy1: {
-    title: 'Dummy Project 1',
-    site: 'https://wodniack.dev',
+  Keeba: {
+    title: 'Keeba – AI Personal Manager',
+    description:
+      'An AI-powered personal assistant designed to manage tasks and provide intelligent responses.',
+    technologies: 'Python, Django, AI',
+    site: 'https://github.com/sabithh',
   },
-  Dummy2: {
-    title: 'Dummy Project 2',
-    site: 'https://wodniack.dev',
+  HelloPeople: {
+    title: 'Hello People – On-Demand Human Service Platform',
+    description:
+      'A platform that connects users with people for real-life services such as drivers, cooking, grocery handling, and companionship.',
+    technologies: 'Python, AI Concepts',
+    site: 'https://github.com/sabithh',
   },
-  Dummy3: {
-    title: 'Dummy Project 3',
-    site: 'https://wodniack.dev',
+  ResumeRanker: {
+    title: 'Resume Ranker (ATS-Based System)',
+    description:
+      'An AI-based resume ranking system that evaluates resumes against job descriptions using text analysis.',
+    technologies: 'Python, AI/ML Concepts',
+    site: 'https://github.com/sabithh',
   },
-  Dummy4: {
-    title: 'Dummy Project 4',
-    site: 'https://wodniack.dev',
+  REQDrone: {
+    title: 'REQ Drone – Smart Request & Delivery Concept',
+    description:
+      'A conceptual AI-driven drone request and delivery system for emergency and on-demand use cases.',
+    technologies: 'AI Concepts, System Design',
+    site: 'https://github.com/sabithh',
   },
-  Dummy5: {
-    title: 'Dummy Project 5',
-    site: 'https://wodniack.dev',
-  },
-  Dummy6: {
-    title: 'Dummy Project 6',
-    site: 'https://wodniack.dev',
-  },
-  Dummy7: {
-    title: 'Dummy Project 7',
-    site: 'https://wodniack.dev',
-  },
-  Dummy8: {
-    title: 'Dummy Project 8',
-    site: 'https://wodniack.dev',
-  },
-  Dummy9: {
-    title: 'Dummy Project 9',
-    site: 'https://wodniack.dev',
-  },
-  Dummy10: {
-    title: 'Dummy Project 10',
-    site: 'https://wodniack.dev',
-  }
 }
 
 let projects = []
@@ -83,17 +74,24 @@ videos.forEach((video, index) => {
   }
 })
 
-// Create dummy projects with 3 videos each
-for (let i = 1; i <= 14; i++) {
-  const key = `Dummy${i}`
+// Create projects for each of the 5 real projects
+const projectKeys = [
+  'BakeryPOS',
+  'Keeba',
+  'HelloPeople',
+  'ResumeRanker',
+  'REQDrone',
+]
+for (let key of projectKeys) {
   const project = info[key]
   if (!project) continue
 
+  // Create multiple cards for each project using the dummy video
   for (let j = 0; j < 4; j++) {
     projects.push({
-      caption: `${project.title} - Video ${j + 1}`,
+      caption: `${project.title} - View ${j + 1}`,
       site: project.site,
-      src: dummyVideo
+      src: dummyVideo,
     })
   }
 }
@@ -358,7 +356,7 @@ while (i < projects.length) {
      */
     setCtxStyle() {
       const color = getComputedStyle(this.el).getPropertyValue(
-        '--color-primary'
+        '--color-primary',
       )
 
       Ticker.nextTick(() => {
@@ -538,12 +536,14 @@ while (i < projects.length) {
           el.style.top = ghost.y + 'px'
           el.style.left = ghost.x + 'px'
 
-          el.style.zIndex = String(j !== 1 && j !== 2 && (j + letters.length + i) % 5 === 0 ? 3 : 1)
+          el.style.zIndex = String(
+            j !== 1 && j !== 2 && (j + letters.length + i) % 5 === 0 ? 3 : 1,
+          )
 
           el.style.setProperty('--ix', String(ghost.i))
           el.style.setProperty(
             '--iy',
-            String(((j + 1) / (letters.length + 1) - 0.5) * 2)
+            String(((j + 1) / (letters.length + 1) - 0.5) * 2),
           )
 
           el.style.setProperty('--ap', String(ghost.ap))
@@ -566,7 +566,7 @@ while (i < projects.length) {
         el.style.setProperty('--size', String(0.5 + Math.random() * 0.5))
         el.style.setProperty(
           '--y',
-          String((0.5 + Math.random() * 0.5) * (i % 2 ? -1 : 1))
+          String((0.5 + Math.random() * 0.5) * (i % 2 ? -1 : 1)),
         )
       })
     }
@@ -607,7 +607,7 @@ while (i < projects.length) {
           duration: 0.75,
           ease: 'power4.in',
         },
-        0
+        0,
       )
 
       tl.fromTo(
@@ -620,7 +620,7 @@ while (i < projects.length) {
           duration: 0.75,
           ease: 'power3.in',
         },
-        0
+        0,
       )
 
       tl.fromTo(
@@ -633,7 +633,7 @@ while (i < projects.length) {
           duration: 0.75,
           ease: 'power3.in',
         },
-        0
+        0,
       )
 
       tl.fromTo(
@@ -646,7 +646,7 @@ while (i < projects.length) {
           duration: 1,
           ease: 'power4.inOut',
         },
-        0
+        0,
       )
 
       tl.fromTo(
@@ -659,7 +659,7 @@ while (i < projects.length) {
           duration: 0.75,
           ease: 'power4.in',
         },
-        0
+        0,
       )
 
       tl.fromTo(
@@ -676,7 +676,7 @@ while (i < projects.length) {
           ease: 'slow(0.15, 0.6)',
           stagger: 0.25,
         },
-        0.75
+        0.75,
       )
 
       tl.fromTo(
@@ -689,7 +689,7 @@ while (i < projects.length) {
           duration: tl.totalDuration(),
           ease: 'power1.out',
         },
-        0.75
+        0.75,
       )
 
       tl.fromTo(
@@ -703,7 +703,7 @@ while (i < projects.length) {
           ease: 'power4.inOut',
           immediateRender: false,
         },
-        '-=1'
+        '-=1',
       )
 
       tl.fromTo(
@@ -717,7 +717,7 @@ while (i < projects.length) {
           ease: 'power4.inOut',
           immediateRender: false,
         },
-        '-=1'
+        '-=1',
       )
 
       tl.fromTo(
@@ -731,7 +731,7 @@ while (i < projects.length) {
           ease: 'power3.inOut',
           immediateRender: false,
         },
-        '-=1'
+        '-=1',
       )
 
       tl.fromTo(
@@ -745,7 +745,7 @@ while (i < projects.length) {
           ease: 'power3.inOut',
           immediateRender: false,
         },
-        '-=1'
+        '-=1',
       )
 
       tl.fromTo(
@@ -758,7 +758,7 @@ while (i < projects.length) {
           duration: 1,
           ease: 'power4.inOut',
         },
-        '-=1'
+        '-=1',
       )
     }
 
@@ -767,7 +767,7 @@ while (i < projects.length) {
      */
     loadNextVideo() {
       const video = Array.from(this.videos).find(
-        (video) => !video.classList.contains('is-loaded')
+        (video) => !video.classList.contains('is-loaded'),
       )
 
       if (video) {
@@ -779,7 +779,7 @@ while (i < projects.length) {
             () => {
               this.videoLoaded(video)
             },
-            { once: true }
+            { once: true },
           )
 
           video.setAttribute('src', video.getAttribute('data-src'))
@@ -908,20 +908,20 @@ while (i < projects.length) {
       this.scrollProgress =
         Math.max(
           Math.min(1, ScrollTrigger.positionInViewport(this.el, 'top')),
-          0
+          0,
         ) *
           -1 +
         (1 -
           Math.max(
             Math.min(1, ScrollTrigger.positionInViewport(this.el, 'bottom')),
-            0
+            0,
           ))
       this.smoothScrollProgress +=
         (this.scrollProgress - this.smoothScrollProgress) * 0.1
 
       this.el.style.setProperty(
         '--scroll-progress',
-        String(this.scrollProgress)
+        String(this.scrollProgress),
       )
 
       // Movement
@@ -1140,10 +1140,8 @@ while (i < projects.length) {
 
           color: color(shadow);
 
-          opacity: min(calc( var(--state) * 2 ), 1);
-          transform: scale(
-              1.05, 1.02
-            )
+          opacity: min(calc(var(--state) * 2), 1);
+          transform: scale(1.05, 1.02)
             translate3d(
               calc(var(--head) * 0.1rem * var(--state) * var(--state)),
               0,

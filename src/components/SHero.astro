@@ -9,11 +9,11 @@ import ASeparator from './ASeparator.astro'
   <div class="s__content js-content">
     <ASeparator
       class="s__separator js-separator"
-      strings={['Ant', 'oi', 'ne', 'Wo', 'dn', 'ia', 'ck']}
+      strings={['Moh', 'am', 'med', 'Sa', 'bi', 'th', 'KM']}
     />
 
     <h1 class="s__title">
-      <span class="s__title__word js-word">Creative</span>
+      <span class="s__title__word js-word">Python</span>
       <img
         class="s__title__asset js-star"
         src="/images/asset-star.svg"
@@ -21,12 +21,13 @@ import ASeparator from './ASeparator.astro'
         width="48"
         height="48"
       />
+      <span class="s__title__word js-word">Backend</span>
       <span class="s__title__word js-word">Developer</span>
     </h1>
 
     <ASeparator
       class="s__separator js-separator"
-      strings={['Do', 'Things', 'Your', 'Way']}
+      strings={['AI', '&', 'Data', 'Science', 'Student']}
     />
   </div>
 
@@ -143,19 +144,23 @@ import ASeparator from './ASeparator.astro'
             ease: 'power3.inOut',
           },
         },
-        0.5
+        0.5,
       )
 
-      tl.call(() => {
-        waves.dispatchEvent(new CustomEvent('introend'))
-      }, null, '-=1')
+      tl.call(
+        () => {
+          waves.dispatchEvent(new CustomEvent('introend'))
+        },
+        null,
+        '-=1',
+      )
 
       tl.set(
         this.el,
         {
           opacity: 1,
         },
-        0
+        0,
       )
 
       tl.to(
@@ -166,7 +171,7 @@ import ASeparator from './ASeparator.astro'
           duration: 1,
           ease: 'expo.inOut',
         },
-        0
+        0,
       )
 
       tl.from(
@@ -176,7 +181,7 @@ import ASeparator from './ASeparator.astro'
           duration: 1.35,
           ease: 'expo.out',
         },
-        0
+        0,
       )
 
       tl.fromTo(
@@ -189,7 +194,7 @@ import ASeparator from './ASeparator.astro'
           duration: 1,
           ease: 'expo.inOut',
         },
-        1
+        1,
       )
 
       tl.to(
@@ -200,7 +205,7 @@ import ASeparator from './ASeparator.astro'
           duration: 1,
           ease: 'expo.inOut',
         },
-        1
+        1,
       )
 
       tl.from(
@@ -210,7 +215,7 @@ import ASeparator from './ASeparator.astro'
           duration: 2,
           ease: 'expo.out',
         },
-        1.5
+        1.5,
       )
 
       tl.fromTo(
@@ -224,7 +229,7 @@ import ASeparator from './ASeparator.astro'
           ease: 'expo.inOut',
           stagger: 0.02,
         },
-        0.45
+        0.45,
       )
 
       tl.from(
@@ -234,7 +239,7 @@ import ASeparator from './ASeparator.astro'
           duration: 1.5,
           ease: 'expo.inOut',
         },
-        0.75
+        0.75,
       )
 
       tl.call(() => {
@@ -384,11 +389,11 @@ import ASeparator from './ASeparator.astro'
 
       cursor: default;
 
-      font: 700 min(15vw, 18.5rem) / 0.8 font-family(bigger);
+      font: 700 min(10.5vw, 13rem) / 0.8 font-family(bigger);
       text-transform: uppercase;
 
       @include mq(desktop-xs) {
-        font-size: 14vw;
+        font-size: 10vw;
       }
 
       @include mq(tablet) {
@@ -397,11 +402,11 @@ import ASeparator from './ASeparator.astro'
         flex-wrap: wrap;
         justify-content: flex-start;
 
-        font-size: calc(31vw - 1rem);
+        font-size: calc(14vw - 0.5rem);
       }
 
       @include mq(phone) {
-        font-size: calc(31vw - 0.75rem);
+        font-size: calc(14vw - 0.5rem);
       }
 
       &__word {

@@ -1,4 +1,4 @@
----
+﻿---
 const lines = [
   ['L', 'e', 't<span class="sup">\'</span>', 's'],
   ['R', 'o', 'c', 'k'],
@@ -37,8 +37,11 @@ const lines = [
             </div>
           ))
         }
-        <a href="mailto:hello@wodniack.dev" class="s__cta__link">
-          hello@wodniack.dev
+        <a href="mailto:mxsabith17@gmail.com" class="s__cta__link">
+          mxsabith17@gmail.com
+        </a>
+        <a href="tel:+917994235150" class="s__cta__link s__cta__link--phone">
+          +91 7994 235 150
         </a>
 
         <div class="s__cta__stars">
@@ -420,7 +423,7 @@ const lines = [
           scale: 1.05,
           duration: 2.7,
           ease: 'power2.in',
-        }
+        },
       )
 
       this.tl.call(this.wavePulse.bind(this), [])
@@ -832,6 +835,14 @@ const lines = [
 
           background: transparent;
           content: '';
+        }
+      }
+
+      &__link--phone {
+        top: calc(50% + var(--size) * 0.43);
+
+        @include mq(phone) {
+          top: calc(50% + var(--size) * 0.38);
         }
       }
 

@@ -3,60 +3,60 @@ import { Image } from 'astro:assets'
 
 const frames = [
   {
-    caption: 'Generative art poster concept',
-    src: import('/src/assets/frames/art-1987.jpg'),
-  },
-  {
-    caption: 'Generative art poster concept',
-    src: import('/src/assets/frames/art-dtyw.jpg'),
-  },
-  {
-    caption: 'Generative art poster concept',
-    src: import('/src/assets/frames/art-lines.jpg'),
-  },
-  {
-    caption: 'My first FOTD on FWA  ♥ (2012)',
-    src: import('/src/assets/frames/first-fwa.jpg'),
-  },
-  {
-    caption: 'Roaaaar!',
-    src: import('/src/assets/frames/roar.jpg'),
-  },
-  {
-    caption: 'Early age (2006) desk setup ',
-    src: import('/src/assets/frames/setup-2006.jpg'),
-  },
-  {
-    caption: '2016 desk setup',
-    src: import('/src/assets/frames/setup-2016.jpg'),
-  },
-  {
-    caption: '2020 desk setup',
+    caption: 'My workspace setup',
     src: import('/src/assets/frames/setup-2020.jpg'),
   },
   {
-    caption: 'Waaark Creative Robots',
-    src: import('/src/assets/frames/waaark.png'),
-  },
-  {
-    caption: '2011 portfolio',
-    src: import('/src/assets/frames/portfolio-2011.jpg'),
-  },
-  {
-    caption: '2014 portfolio',
-    src: import('/src/assets/frames/portfolio-2014.jpg'),
-  },
-  {
-    caption: '2017 portfolio (never released)',
-    src: import('/src/assets/frames/portfolio-2017.jpg'),
-  },
-  {
-    caption: '2021 portfolio',
+    caption: 'Bakery POS System - Dashboard',
     src: import('/src/assets/frames/portfolio-2021.jpg'),
   },
   {
-    caption: 'Legos ♥',
+    caption: 'Keeba AI Assistant - Interface',
+    src: import('/src/assets/frames/art-dtyw.jpg'),
+  },
+  {
+    caption: 'Hello People Platform - Concept',
+    src: import('/src/assets/frames/portfolio-2014.jpg'),
+  },
+  {
+    caption: 'Resume Ranker ATS - Demo',
+    src: import('/src/assets/frames/first-fwa.jpg'),
+  },
+  {
+    caption: 'REQ Drone Delivery - Mockup',
+    src: import('/src/assets/frames/art-1987.jpg'),
+  },
+  {
+    caption: 'Learning Python & Django',
+    src: import('/src/assets/frames/setup-2016.jpg'),
+  },
+  {
+    caption: 'AI/ML Model Training',
+    src: import('/src/assets/frames/art-lines.jpg'),
+  },
+  {
+    caption: 'Data Science Projects',
+    src: import('/src/assets/frames/waaark.png'),
+  },
+  {
+    caption: 'Early coding journey',
+    src: import('/src/assets/frames/setup-2006.jpg'),
+  },
+  {
+    caption: 'Backend Development',
+    src: import('/src/assets/frames/portfolio-2011.jpg'),
+  },
+  {
+    caption: 'API Architecture Design',
+    src: import('/src/assets/frames/portfolio-2017.jpg'),
+  },
+  {
+    caption: 'Tech Stack & Tools',
     src: import('/src/assets/frames/legos.jpg'),
+  },
+  {
+    caption: 'Problem Solving ♥',
+    src: import('/src/assets/frames/roar.jpg'),
   },
 ]
 ---
@@ -284,7 +284,7 @@ const frames = [
         object.el.addEventListener('mousedown', this.objectDragStart.bind(this))
         object.el.addEventListener(
           'touchstart',
-          this.objectDragStart.bind(this)
+          this.objectDragStart.bind(this),
         )
       })
       this.el.addEventListener('mouseup', this.objectDragEnd.bind(this))
@@ -292,7 +292,7 @@ const frames = [
 
       this.objectsWrapper.addEventListener(
         'touchmove',
-        this.onTouchMove.bind(this)
+        this.onTouchMove.bind(this),
       )
 
       this.el.addEventListener('intersect', this.onIntersect.bind(this), {
@@ -462,7 +462,7 @@ const frames = [
 
       this.el.style.setProperty(
         '--distortion',
-        String(Math.hypot(dx, dy) * 0.14)
+        String(Math.hypot(dx, dy) * 0.14),
       )
 
       // Side lines
@@ -509,7 +509,7 @@ const frames = [
       if (this.objects.length > 0) {
         const object = this.objects.splice(
           Math.floor(Math.random() * this.objects.length),
-          1
+          1,
         )[0]
 
         object.set()
@@ -527,12 +527,15 @@ const frames = [
      * Initial objects
      */
     firstObjects() {
-      const totalObjects =  Math.max(Math.min(Math.round(window.safeWidth * 0.025), 5), 2)
+      const totalObjects = Math.max(
+        Math.min(Math.round(window.safeWidth * 0.025), 5),
+        2,
+      )
 
       for (let i = 0; i < totalObjects; i++) {
         const object = this.objects.splice(
           Math.floor(Math.random() * this.objects.length),
-          1
+          1,
         )[0]
 
         object.set(false)
